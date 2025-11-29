@@ -1,13 +1,46 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Zikai Zhou Portfolio</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Prank Page</title>
+    <style>
+        /* 1. This CSS rule finds your image by its ID and hides it */
+        #reveal-image {
+            display: none;
+            margin-top: 30px; /* Just adds some space */
+        }
+    </style>
 </head>
 <body>
 
-<h1>My Who am I?</h1>
-<p>I am Zikai.</p>
-<a href="https://www.youtube.com/watch?v=xvFZjo5PgG0&list=RDxvFZjo5PgG0&start_radio=1">Want to know more?</a>
+    <h2>Click this very important link...</h2>
+
+    <a id="prank-link" 
+       href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" 
+       target="_blank" 
+       rel="noopener noreferrer">
+       Click for a Top Secret Project Update
+    </a>
+
+    <img id="reveal-image" 
+         src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExZDBob3JmdWJwbjV1eXBvNmVqcnJvNTRqd3JmYTB4cjJudzJjaW5uYyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/l3E6uhDAN3W7vkeUo/giphy.gif" 
+         alt="Person laughing">
+
+    <script>
+        // Find the link on the page using its ID
+        const prankLink = document.getElementById('prank-link');
+        
+        // Find the image on the page using its ID
+        const revealImage = document.getElementById('reveal-image');
+
+        // Add an "event listener" that waits for the link to be clicked
+        prankLink.addEventListener('click', function() {
+            // When the link IS clicked, change the image's style
+            // from 'display: none' to 'display: block' to make it visible.
+            revealImage.style.display = 'block';
+        });
+    </script>
 
 </body>
 </html>
