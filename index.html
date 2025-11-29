@@ -5,10 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Prank Page</title>
     <style>
-        /* 1. This CSS rule finds your image by its ID and hides it */
-        #reveal-image {
+        /* 1. This CSS now hides your new GIF container */
+        #reveal-gif {
             display: none;
             margin-top: 30px; /* Just adds some space */
+            /* We set a max-width so the embed doesn't go crazy */
+            max-width: 400px; 
         }
     </style>
 </head>
@@ -25,24 +27,27 @@
        Want to learn more?
     </a>
 
-    <img id="reveal-image" 
-         src="<div class="tenor-gif-embed" data-postid="9533349643597415771" data-share-method="host" data-aspect-ratio="1.26923" data-width="100%"><a href="https://tenor.com/view/minion-gif-9533349643597415771">Minion GIF</a>from <a href="https://tenor.com/search/minion-gifs">Minion GIFs</a></div> <script type="text/javascript" async src="https://tenor.com/embed.js"></script> 
-         alt="Minion laughing">
+    <div id="reveal-gif">
+        <div class="tenor-gif-embed" data-postid="9533349643597415771" data-share-method="host" data-aspect-ratio="1.26923" data-width="100%"><a href="https://tenor.com/view/minion-gif-9533349643597415771">Minion GIF</a>from <a href="https://tenor.com/search/minion-gifs">Minion GIFs</a></div>
+    </div>
+
 
     <script>
         // Find the link on the page using its ID
         const prankLink = document.getElementById('prank-link');
         
-        // Find the image on the page using its ID
-        const revealImage = document.getElementById('reveal-image');
+        // CHANGE 2: Find the new container ID
+        const revealGif = document.getElementById('reveal-gif');
 
         // Add an "event listener" that waits for the link to be clicked
         prankLink.addEventListener('click', function() {
-            // When the link IS clicked, change the image's style
-            // from 'display: none' to 'display: block' to make it visible.
-            revealImage.style.display = 'block';
+            
+            // CHANGE 3: Show the new container
+            revealGif.style.display = 'block';
         });
     </script>
+
+    <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
 
 </body>
 </html>
